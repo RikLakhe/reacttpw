@@ -1,0 +1,183 @@
+a:hover {
+  text-decoration: none;
+}
+
+svg {
+  vertical-align: initial;
+}
+
+.ant-menu-submenu > .ant-menu {
+  background-color: #fff;
+}
+
+.ant-table-thead > tr > th,
+.ant-table-tbody > tr > td {
+  padding: 8px 16px;
+  word-break: normal;
+  -ms-word-break: normal;
+}
+
+.ant-table-thead > tr > th {
+  background: #ebedf0;
+}
+
+h4.article-title {
+  font-size: 1.1875rem;
+}
+
+.ant-modal-confirm-btns button.ant-btn-primary {
+  float: left;
+  margin: 0 10px;
+}
+
+.card {
+  margin-bottom: 24px;
+}
+
+/* login form css*/
+.login-box,
+.reset-box {
+  padding: 8% 0 0;
+}
+
+.login-box .p-5,
+.reset-box .p-5 {
+  padding-bottom: 2rem !important;
+}
+
+.login-box .box,
+.reset-box .box {
+  width: 367px;
+  margin: 0 auto;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+.company-title {
+  text-align: center;
+  font-size: 1.1875rem;
+}
+
+/* Form */
+.policy-form .ant-form-item,
+.password-form .ant-form-item,
+.role-form .ant-form-item {
+  margin-bottom: 0;
+}
+.password-label-align .ant-form-item-label {
+  text-align: left;
+}
+
+@media (max-width: 575px) {
+  .ant-col-xs-24.ant-form-item-label {
+    padding-top: 10px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    margin-top: 0px;
+    margin-bottom: -6px;
+  }
+
+  .ant-form-vertical .ant-form-explain,
+  .ant-form-vertical .ant-form-extra {
+    margin-top: 3px;
+  }
+
+  .row {
+    margin-right: -14px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .ant-col-xs-24.ant-form-item-label {
+    padding-top: 10px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    margin-top: 0px;
+    margin-bottom: -6px;
+  }
+
+  .ant-form-vertical .ant-form-explain,
+  .ant-form-vertical .ant-form-extra {
+    margin-top: 3px;
+  }
+
+  .row {
+    margin-right: -14px;
+  }
+}
+
+.profile-view .ant-form-item {
+  margin-bottom: 0 !important;
+}
+
+/*form not required label*/
+.not-required-label .ant-form-item-label {
+  padding-left: 10px;
+}
+
+.password-expiry .ant-form-explain {
+  margin-left: 14rem;
+}
+
+.password-label .ant-form-item-children span {
+  font-weight: bolder;
+}
+
+.password-span-label {
+  font-weight: normal !important;
+}
+
+.detail-table .table thead th {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.detail-table .table-bordered td {
+  border-right: 1px solid #dee2e6;
+  border-left: 1px solid #dee2e6;
+  border-top-width: 0;
+}
+
+/*vertical scroll-able table */
+.scroll-table tbody {
+  display: block;
+  max-height: 50vh;
+  min-width: 720px;
+  overflow-y: auto;
+}
+
+.scroll-table thead,
+.scroll-table tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table-img {
+  height: 100px;
+  width: 100px;
+}
+
+/*permission table scrollable*/
+.table-vScroll tbody {
+  overflow-y: scroll;
+  height: 300px;
+  display: block;
+}
+
+.table-vScroll thead {
+  background: #eee;
+  display: block;
+}
