@@ -19,6 +19,7 @@ import './styles/theme.scss';
 import './styles/ui.scss';
 import './styles/vendors.scss';
 import './styles/themes/normalize.css';
+import './styles/normalize.sass';
 
 import history from './utils/history';
 // import configureStore from './store/configureStore';

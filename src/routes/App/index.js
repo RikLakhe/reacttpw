@@ -1,11 +1,33 @@
-import React from "react";
+import React, { Fragment } from 'react';
+import { withRouter, Switch, Route } from 'react-router-dom';
 
-import AppLayout from "../../components/Layout";
+// Import custom components
+import PublicRoute from '../PublicRoute';
 
-const App = props =>{
-    return(
-        <AppLayout {...props}/>
-    )
-}
+import {
+    AsyncAppLayout,
+    AsyncInternalServer,
+    AsyncNotFound,
+    AsyncForbidden,
+    AsyncDashboard,
+    AsyncSetting,
+} from './AsyncComponent';
 
-export default App;
+const App = () => (
+    <Fragment>
+        <Switch>
+            <PublicRoute exact path="/" layout={AsyncAppLayout} component={AsyncDashboard} />
+
+            <PublicRoute exact path="/home" layout={AsyncAppLayout} component={AsyncDashboard} />
+            <PublicRoute exact path="/setting" layout={AsyncAppLayout} component={AsyncSetting} />
+
+            <Route path="/403" layout={AsyncAppLayout} component={AsyncForbidden} />
+            <Route path="/500" component={AsyncInternalServer} />
+            <Route path="/404" component={AsyncNotFound} />
+            {/*<Route component={AsyncNotFound} />*/}
+            <PublicRoute layout={AsyncAppLayout} component={AsyncDashboard} />
+        </Switch>
+    </Fragment>
+);
+
+export default withRouter(App);

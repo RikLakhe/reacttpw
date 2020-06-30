@@ -24,7 +24,9 @@ const AppLayout = props => {
                 // style={{marginLeft: collapsed ? 80 : 200}}
             >
                 <AppHeader toggle={toggle}/>
-                <AppContent/>
+                <AppContent>
+                    {props.children}
+                </AppContent>
                 <AppFooter/>
             </Layout>
         </Layout>
