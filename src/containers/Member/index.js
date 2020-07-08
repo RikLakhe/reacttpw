@@ -1,11 +1,27 @@
-import React from "react";
+import React, { Fragment } from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-const Member = props =>{
-    return (
-        <div>
-            ggg Member
-        </div>
-    )
-}
+import NotFound from '../Exception/NotFoundContainer';
 
-export default Member;
+import MemberFormContainer from './MemberFormContainer.js';
+import MemberListContainer from './MemberListContainer.js';
+
+const MemberContainer = ({ match }) => (
+    <Fragment>
+        <Switch>
+            <Route
+                exact
+                path={`${match.url}`}
+                component={MemberListContainer}
+            />
+            <Route
+                exact
+                path={`${match.url}/new`}
+                component={MemberFormContainer}
+            />
+            <Route component={NotFound} />
+        </Switch>
+    </Fragment>
+);
+
+export default MemberContainer;

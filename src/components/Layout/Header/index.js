@@ -10,7 +10,8 @@ const { Header } = Layout;
 
 const AppHeader = props => {
     return (
-        <Header className="site-layout-background" style={{ padding: 0 }}>
+        <Header className="site-layout-background" style={{ padding: 0,position: "fixed",
+            width: "100%", zIndex:'100' }}>
             {
 
             }

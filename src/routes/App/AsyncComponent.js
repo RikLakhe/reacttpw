@@ -23,6 +23,7 @@ export const AsyncDashboard = loadable(() => pMinDelay(import("../../containers/
     fallback: <Loader/>
 })
 export const AsyncMember = loadable(() => pMinDelay(import("../../containers/Member"), 200), {fallback: <Loader/>})
+
 export const AsyncPrice = loadable(() => pMinDelay(import("../../containers/Price/PriceContainer"), 200), {
     fallback: <Loader/>
 })

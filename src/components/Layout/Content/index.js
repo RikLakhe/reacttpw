@@ -8,13 +8,7 @@ const {Content} = Layout
 
 const AppContent = props => {
     return (
-        <Content
-            className="site-layout-background content-main"
-            style={{
-                margin: '24px 16px',
-                // padding: 24,
-                minHeight: 280,
-            }}>
+        <Content className="site-layout-background content-main">
             {props.children}
         </Content>
     )

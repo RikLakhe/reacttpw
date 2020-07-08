@@ -11,6 +11,8 @@ import {
     AsyncForbidden,
     AsyncDashboard,
     AsyncSetting,
+    AsyncPrice,
+    AsyncMember
 } from './AsyncComponent';
 
 const App = () => (
@@ -19,7 +21,9 @@ const App = () => (
             <PublicRoute exact path="/" layout={AsyncAppLayout} component={AsyncDashboard} />
 
             <PublicRoute exact path="/home" layout={AsyncAppLayout} component={AsyncDashboard} />
-            <PublicRoute exact path="/setting" layout={AsyncAppLayout} component={AsyncSetting} />
+            <PublicRoute exact path="/price" layout={AsyncAppLayout} component={AsyncPrice} />
+            <PublicRoute path="/member" layout={AsyncAppLayout} component={AsyncMember} />
+            <PublicRoute path="/setting" layout={AsyncAppLayout} component={AsyncSetting} />
 
             <Route path="/403" layout={AsyncAppLayout} component={AsyncForbidden} />
             <Route path="/500" component={AsyncInternalServer} />
