@@ -10,6 +10,7 @@ import {
     Checkbox,
     Button,
     DatePicker,
+    Card
 } from 'antd';
 
 import {formLayout} from "../../../constants/config";
@@ -24,19 +25,46 @@ const Component = props => {
         console.log('Received values of form: ', values);
     };
 
+    const onReset = () => {
+        form.resetFields();
+    };
+
     return (
-        <div>
+        <Card className={'mt-2'}>
             <Form
                 {...formLayout}
                 form={form}
                 layout={'vertical'}
                 name="register"
                 onFinish={onFinish}
+                onReset={onReset}
                 initialValues={{
-                    name: 'test'
+                    id: 'TPW-1023122',
+                    branch: 'kamaladi'
                 }}
                 scrollToFirstError
             >
+
+                <Row gutter={16}>
+                    <Col sm={24} md={6}>
+                        <FormItem
+                            name="id"
+                            label="Id"
+                            shouldUpdate
+                        >
+                            <Input disabled={true}/>
+                        </FormItem>
+                    </Col>
+                    <Col sm={24} md={6}>
+                        <FormItem
+                            name="branch"
+                            label="Branch"
+                        >
+                            <Input disabled={true}/>
+                        </FormItem>
+                    </Col>
+                </Row>
+
                 <Row gutter={16}>
                     <Col sm={24} md={6}>
                         <FormItem
@@ -49,7 +77,7 @@ const Component = props => {
                                 },
                                 {
                                     required: true,
-                                    message: 'Please input your name.',
+                                    message: 'Please input name.',
                                 },
                             ]}
                         >
@@ -85,7 +113,7 @@ const Component = props => {
                                 },
                                 {
                                     required: true,
-                                    message: 'Please enter name.',
+                                    message: 'Please enter phone.',
                                 }, {
                                     max: 10,
                                     min: 7,
@@ -118,11 +146,11 @@ const Component = props => {
                     <Col sm={24} md={6}>
                         <FormItem
                             name="address"
-                            label="address"
+                            label="Address"
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Please enter email.',
+                                    message: 'Please enter address.',
                                 },
                             ]}
                         >
@@ -136,7 +164,7 @@ const Component = props => {
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Please enter email.',
+                                    message: 'Please enter date of birth.',
                                 },
                             ]}
                         >
@@ -154,11 +182,11 @@ const Component = props => {
                             rules={[
                                 {
                                     type: 'string',
-                                    message: 'The input is not valid email.',
+                                    message: 'The input is not valid name.',
                                 },
                                 {
                                     required: true,
-                                    message: 'Please enter email.',
+                                    message: 'Please enter emergency name.',
                                 },
                             ]}
                         >
@@ -172,11 +200,11 @@ const Component = props => {
                             rules={[
                                 {
                                     type: 'string',
-                                    message: 'The input is not valid email.',
+                                    message: 'The input is not valid relation.',
                                 },
                                 {
                                     required: true,
-                                    message: 'Please enter email.',
+                                    message: 'Please enter relationship.',
                                 },
                             ]}
                         >
@@ -194,7 +222,7 @@ const Component = props => {
                                 },
                                 {
                                     required: true,
-                                    message: 'Please enter email.',
+                                    message: 'Please enter emergency contact.',
                                 },
                             ]}
                         >
@@ -203,67 +231,20 @@ const Component = props => {
                     </Col>
                 </Row>
 
-                {/*<Row gutter={16}>*/}
-                {/*    <Col sm={24} md={6}>*/}
-                {/*        <FormItem*/}
-                {/*            name="membershipType"*/}
-                {/*            label="Member"*/}
-                {/*            rules={[*/}
-                {/*                {*/}
-                {/*                    required: true,*/}
-                {/*                    message: 'Please input your name.',*/}
-                {/*                },*/}
-                {/*            ]}*/}
-                {/*        >*/}
-                {/*            <Select placeholder={'Type'}>*/}
-                {/*                <Option key={'1'} value={'1'}>1</Option>*/}
-                {/*                <Option key={'2'} value={'2'}>2</Option>*/}
-                {/*            </Select>*/}
-                {/*        </FormItem>*/}
-                {/*    </Col>*/}
-                {/*    <Col sm={24} md={3}>*/}
-                {/*        <FormItem*/}
-                {/*            name="category"*/}
-                {/*            label="Category"*/}
-                {/*            rules={[*/}
-                {/*                {*/}
-                {/*                    required: true,*/}
-                {/*                    message: 'Please select category.',*/}
-                {/*                }*/}
-                {/*            ]}*/}
-                {/*        >*/}
-                {/*            <Select placeholder={'Category'}>*/}
-                {/*                <Option key={'1'} value={'1'}>1</Option>*/}
-                {/*                <Option key={'2'} value={'2'}>2</Option>*/}
-                {/*            </Select>*/}
-                {/*        </FormItem>*/}
-                {/*    </Col>*/}
-                {/*    <Col sm={24} md={3}>*/}
-                {/*        <FormItem*/}
-                {/*            name="duration"*/}
-                {/*            label="Duration"*/}
-                {/*            rules={[*/}
-                {/*                {*/}
-                {/*                    required: true,*/}
-                {/*                    message: 'Please enter email.',*/}
-                {/*                },*/}
-                {/*            ]}*/}
-                {/*        >*/}
-                {/*            <Select placeholder={'Category'}>*/}
-                {/*                <Option key={'1'} value={'1'}>1 month</Option>*/}
-                {/*                <Option key={'3'} value={'3'}>3 month</Option>*/}
-                {/*                <Option key={'6'} value={'6'}>6 month</Option>*/}
-                {/*                <Option key={'12'} value={'12'}>12 month</Option>*/}
-                {/*            </Select>*/}
-                {/*        </FormItem>*/}
-                {/*    </Col>*/}
-                {/*</Row>*/}
-
-                <Button type="primary" htmlType="submit">
-                    Save
-                </Button>
+                <Row gutter={16}>
+                    <Col>
+                        <Button htmlType="reset">
+                            Cancel
+                        </Button>
+                    </Col>
+                    <Col>
+                        <Button type="primary" htmlType="submit">
+                            Save
+                        </Button>
+                    </Col>
+                </Row>
             </Form>
-        </div>
+        </Card>
     )
 }
 
